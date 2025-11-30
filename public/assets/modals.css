@@ -4,14 +4,18 @@
 
 /* --- VARIÁVEIS --- */
 :root {
-    --bg-dark: #0a1520;
-    --bg-darker: #050a10;
-    --neon-green: #00ff88;
-    --neon-blue: #00d4ff;
-    --neon-purple: #aa00ff;
-    --gold: #ffd700;
-    --white: #ffffff;
-    --gray: #cccccc;
+    --bg-dark: #0F172A;
+    /* Slate-900 */
+    --bg-darker: #020617;
+    /* Slate-950 */
+    --primary-purple: #8B5CF6;
+    /* Roxo */
+    --primary-pink: #EC4899;
+    /* Rosa */
+    --primary-blue: #3B82F6;
+    /* Azul */
+    --white: #F8FAFC;
+    --gray: #CBD5E1;
 }
 
 /* --- OVERLAY --- */
@@ -21,7 +25,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(5, 10, 16, 0.95);
+    background: rgba(2, 6, 23, 0.95);
+    /* Slate-950 com opacidade */
     backdrop-filter: blur(5px);
     display: none;
     z-index: 999;
@@ -33,8 +38,13 @@
 }
 
 @keyframes overlayFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* --- ESTRUTURA GERAL DO MODAL --- */
@@ -43,12 +53,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    background: linear-gradient(145deg, #0f1f2f 0%, var(--bg-dark) 100%);
-    border: 3px solid var(--neon-green);
+    background: linear-gradient(145deg, #1E293B 0%, var(--bg-darker) 100%);
+    border: 3px solid var(--primary-purple);
     border-radius: 10px;
-    box-shadow: 
-        0 0 30px rgba(0, 255, 136, 0.4),
-        inset 0 0 30px rgba(0, 255, 136, 0.05);
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.4),
+        inset 0 0 30px rgba(139, 92, 246, 0.05);
     padding: 2rem;
     z-index: 1000;
     display: none;
@@ -67,16 +77,26 @@
 }
 
 @keyframes modalBounce {
-    0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
-    50% { transform: translate(-50%, -50%) scale(1.05); }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 /* --- BOTÃO DE FECHAR --- */
 .modal-close {
     background: transparent;
     border: none;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     font-size: 1.5rem;
     position: absolute;
     top: 15px;
@@ -93,7 +113,7 @@
 }
 
 .modal-close:hover {
-    color: var(--neon-blue);
+    color: var(--primary-pink);
     transform: rotate(90deg);
 }
 
@@ -104,7 +124,7 @@
 #login .modal-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 1.2rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     margin-bottom: 0.5rem;
     text-align: left;
 }
@@ -125,7 +145,7 @@
     display: block;
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
@@ -141,7 +161,7 @@
     width: 100%;
     padding: 0.8rem 3rem 0.8rem 3rem;
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--neon-green);
+    border: 2px solid var(--primary-purple);
     border-radius: 8px;
     color: var(--white);
     font-family: 'VT323', monospace;
@@ -151,15 +171,15 @@
 }
 
 #login .input-icon input:focus {
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-    background: rgba(0, 212, 255, 0.05);
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+    background: rgba(236, 72, 153, 0.05);
 }
 
 #login .input-icon-left {
     position: absolute;
     left: 1rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     font-size: 1.2rem;
     pointer-events: none;
 }
@@ -167,25 +187,25 @@
 #login .input-icon-right {
     position: absolute;
     right: 1rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     font-size: 1.2rem;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 #login .input-icon-right:hover {
-    color: var(--neon-blue);
+    color: var(--primary-pink);
 }
 
 #login .input-icon input::placeholder {
-    color: rgba(204, 204, 204, 0.5);
+    color: rgba(203, 213, 225, 0.5);
 }
 
 #login .forgot-password {
     display: block;
     font-family: 'VT323', monospace;
     font-size: 1.2rem;
-    color: var(--neon-blue);
+    color: var(--primary-pink);
     text-decoration: none;
     margin-top: 0.5rem;
     text-align: right;
@@ -193,16 +213,16 @@
 }
 
 #login .forgot-password:hover {
-    color: var(--neon-green);
+    color: var(--primary-purple);
 }
 
 #login .login-button {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.8rem;
     padding: 1rem 2rem;
-    border: 3px solid var(--neon-green);
+    border: 3px solid var(--primary-purple);
     background: transparent;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     cursor: pointer;
     width: 100%;
     margin-top: 1rem;
@@ -210,13 +230,13 @@
     text-transform: uppercase;
     transition: all 0.3s ease;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
 #login .login-button:hover {
-    background: var(--neon-green);
-    color: var(--bg-dark);
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+    background: var(--primary-purple);
+    color: var(--bg-darker);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
     transform: translateY(-2px);
 }
 
@@ -228,13 +248,13 @@
 }
 
 #login .signup-link a {
-    color: var(--neon-green);
+    color: var(--primary-pink);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #login .signup-link a:hover {
-    color: var(--neon-blue);
+    color: var(--primary-purple);
 }
 
 /* ============================================
@@ -244,7 +264,7 @@
 #cadastro .modal-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 1.2rem;
-    color: var(--gold);
+    color: var(--primary-pink);
     margin-bottom: 0.5rem;
     text-align: left;
 }
@@ -265,7 +285,7 @@
     display: block;
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
-    color: var(--gold);
+    color: var(--primary-pink);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
@@ -281,7 +301,7 @@
     width: 100%;
     padding: 0.8rem 3rem 0.8rem 3rem;
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--gold);
+    border: 2px solid var(--primary-pink);
     border-radius: 8px;
     color: var(--white);
     font-family: 'VT323', monospace;
@@ -291,15 +311,15 @@
 }
 
 #cadastro .input-icon input:focus {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 15px rgba(170, 0, 255, 0.5);
-    background: rgba(170, 0, 255, 0.05);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    background: rgba(59, 130, 246, 0.05);
 }
 
 #cadastro .input-icon-left {
     position: absolute;
     left: 1rem;
-    color: var(--gold);
+    color: var(--primary-pink);
     font-size: 1.2rem;
     pointer-events: none;
 }
@@ -307,18 +327,18 @@
 #cadastro .input-icon-right {
     position: absolute;
     right: 1rem;
-    color: var(--gold);
+    color: var(--primary-pink);
     font-size: 1.2rem;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 #cadastro .input-icon-right:hover {
-    color: var(--neon-purple);
+    color: var(--primary-blue);
 }
 
 #cadastro .input-icon input::placeholder {
-    color: rgba(204, 204, 204, 0.5);
+    color: rgba(203, 213, 225, 0.5);
 }
 
 #cadastro .signup-type {
@@ -331,7 +351,7 @@
 #cadastro .signup-type-item {
     font-family: 'VT323', monospace;
     font-size: 1.3rem;
-    color: var(--gold);
+    color: var(--primary-pink);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -341,7 +361,7 @@
 #cadastro .signup-type-item input[type="radio"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--gold);
+    accent-color: var(--primary-pink);
     cursor: pointer;
 }
 
@@ -349,9 +369,9 @@
     font-family: 'Press Start 2P', monospace;
     font-size: 0.8rem;
     padding: 1rem 2rem;
-    border: 3px solid var(--gold);
+    border: 3px solid var(--primary-pink);
     background: transparent;
-    color: var(--gold);
+    color: var(--primary-pink);
     cursor: pointer;
     width: 100%;
     margin-top: 1rem;
@@ -359,13 +379,13 @@
     text-transform: uppercase;
     transition: all 0.3s ease;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
 }
 
 #cadastro .login-button:hover {
-    background: var(--gold);
-    color: var(--bg-dark);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    background: var(--primary-pink);
+    color: var(--bg-darker);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
     transform: translateY(-2px);
 }
 
@@ -377,13 +397,13 @@
 }
 
 #cadastro .signup-link a {
-    color: var(--gold);
+    color: var(--primary-purple);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #cadastro .signup-link a:hover {
-    color: var(--neon-purple);
+    color: var(--primary-blue);
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -392,13 +412,13 @@
         width: 95%;
         padding: 1.5rem;
     }
-    
+
     #login .modal-title,
     #cadastro .modal-title {
         font-size: 1rem;
         gap: 0.5rem;
     }
-    
+
     #login .login-button,
     #cadastro .login-button {
         font-size: 0.7rem;

@@ -1,13 +1,15 @@
 /* --- FOOTER PIXEL ART GAMIFICADO --- */
 footer {
-    background: linear-gradient(180deg, #0a1520 0%, #050a10 100%);
-    color: #fff;
+    background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
+    /* Slate-900 to Slate-950 */
+    color: #F8FAFC;
     padding: 3rem 2rem;
     text-align: center;
     position: relative;
     font-family: 'VT323', monospace;
-    border-top: 4px solid #00ff88;
-    box-shadow: 0 -10px 40px rgba(0, 255, 136, 0.2);
+    border-top: 4px solid #8B5CF6;
+    /* Roxo */
+    box-shadow: 0 -10px 40px rgba(139, 92, 246, 0.2);
 }
 
 /* Linha neon no topo */
@@ -17,14 +19,21 @@ footer {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, transparent, #00ff88, #00d4ff, #00ff88, transparent);
-    box-shadow: 0 0 20px #00ff88;
+    background: linear-gradient(to right, transparent, #8B5CF6, #3B82F6, #8B5CF6, transparent);
+    box-shadow: 0 0 20px #8B5CF6;
     animation: neonPulse 3s ease-in-out infinite;
 }
 
 @keyframes neonPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
 }
 
 /* Conteúdo do footer */
@@ -38,9 +47,10 @@ footer {
 .footer-content p {
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
-    color: #cccccc;
+    color: #CBD5E1;
+    /* Cinza claro */
     font-family: 'VT323', monospace;
-    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
 }
 
 /* Nav centralizado com estilo pixel */
@@ -54,7 +64,8 @@ footer nav {
 }
 
 footer nav a {
-    color: #00ff88;
+    color: #8B5CF6;
+    /* Roxo */
     text-decoration: none;
     font-size: 0.7rem;
     padding: 0.5rem 1rem;
@@ -73,9 +84,10 @@ footer nav a::before {
 }
 
 footer nav a:hover {
-    color: #00d4ff;
-    border: 2px solid #00d4ff;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    color: #EC4899;
+    /* Rosa */
+    border: 2px solid #EC4899;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
     transform: translateY(-2px);
 }
 
@@ -95,12 +107,15 @@ footer nav a:hover::before {
     footer {
         padding: 20px 15px 30px;
     }
+
     .footer-content p {
         font-size: 0.85rem;
     }
+
     footer nav {
         gap: 12px;
     }
+
     footer nav a {
         display: block;
         margin: 3px 0;
@@ -117,4 +132,3 @@ footer nav a:hover::before {
 .footer-termo-uso:hover {
     opacity: 1;
 }
-

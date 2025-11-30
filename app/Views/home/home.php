@@ -27,7 +27,7 @@
                     <img src="<?= $baseUrl ?>/public/imagens/badge-1-conquista.png" alt="Badge Conquista" class="badge-img">
                 </div>
                 
-                <h1 class="glitch-text" data-text="VDVagas">NexusPro</h1>
+                <h1 class="glitch-text" data-text="NexusPro">NexusPro</h1>
                 <h2 class="subtitle-pixel">Resolvendo o bug entre <span class="highlight">talentos</span> e <span class="highlight">oportunidades</span></h2>
                 
                 <div class="hero-stats">
@@ -57,7 +57,7 @@
             
             <div class="hero-image">
                 <div class="pixel-frame">
-                    <img src="<?= $baseUrl ?>/public/imagens/subind-escada-pixelart.png" alt="Subindo a Escada do Sucesso">
+                    <img src="<?= $baseUrl ?>/public/imagens/nexuspro-logo-removebg.png" alt="Subindo a Escada do Sucesso">
                     <div class="frame-corners"></div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                 </div>
                 <h3 class="quest-title">Trilha da Primeira Vaga</h3>
                 <p class="quest-description">
-                    Conquiste sua primeira oportunidade profissional através do VDVagas! 
+                    Conquiste sua primeira oportunidade profissional através do NexusPro! 
                     Complete a jornada e ganhe +1000 XP e o troféu lendário!
                 </p>
                 <div class="quest-rewards">
@@ -374,7 +374,7 @@
     <section class="about-game">
         <div class="section-header">
             <h2 class="pixel-title">
-                SOBRE O VDVAGAS
+                SOBRE O NEXUSPRO
             </h2>
             <p class="section-subtitle">
                 Nossa missão é transformar a busca por emprego em uma jornada épica e recompensadora
@@ -433,7 +433,7 @@
                 <p class="feature-description">
                     Em um mundo digital e acelerado, transformamos a busca por emprego em uma 
                     <span class="highlight">experiência interativa e motivadora</span>. 
-                    O VDVagas une tecnologia, design e gamificação para criar um ambiente onde 
+                    O NexusPro une tecnologia, design e gamificação para criar um ambiente onde 
                     cada candidatura é uma missão, cada conquista é celebrada, e cada passo te aproxima do seu objetivo final.
                 </p>
                 <ul class="feature-list">
