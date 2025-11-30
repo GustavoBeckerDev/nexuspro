@@ -1,0 +1,1256 @@
+/* === VARIÁVEIS CSS === */
+:root {
+    --bg-dark: #0a0f1c;
+    --bg-darker: #050a14;
+    --neon-green: #00ff88;
+    --neon-green-dark: #00cc6a;
+    --neon-blue: #00d4ff;
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+    --gold: #ffd700;
+    --orange: #ff8c00;
+    --white: #ffffff;
+    --gray: #b0b0b0;
+    --gray-dark: #333333;
+}
+
+/* === RESET E BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    overflow-x: hidden;
+}
+
+.about-game {
+    min-height: 100vh;
+    position: relative;
+}
+
+.about-game::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* === MAIN TITLE SECTION === */
+.main-title-section {
+    padding: 2rem 2rem 2rem;
+    text-align: center;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.main-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 4rem;
+    color: var(--neon-green);
+    text-shadow: 
+        0 0 10px var(--neon-green),
+        0 0 20px var(--neon-green),
+        0 0 40px var(--neon-green),
+        0 0 80px var(--neon-green);
+    margin: 0;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+    letter-spacing: 0.2em;
+}
+
+@keyframes titleGlow {
+    0% { 
+        text-shadow: 
+            0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 40px var(--neon-green);
+    }
+    100% { 
+        text-shadow: 
+            0 0 15px var(--neon-green),
+            0 0 30px var(--neon-green),
+            0 0 60px var(--neon-green),
+            0 0 120px var(--neon-green);
+    }
+}
+
+/* === HERO SECTION === */
+.hero-about {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.pixel-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--neon-green), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--neon-blue), transparent),
+        radial-gradient(1px 1px at 80% 20%, var(--gold), transparent);
+    background-size: 200% 200%;
+    opacity: 0.3;
+    animation: particleFloat 20s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.glitch-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 3rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(-2px, 2px); }
+    20% { transform: translate(2px, -2px); }
+    30% { transform: translate(-2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, 2px); }
+    60% { transform: translate(2px, -2px); }
+    70% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    90% { transform: translate(-2px, 2px); }
+}
+
+.subtitle-pixel {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.stat-item {
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid var(--neon-green);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(0, 255, 136, 0.5);
+}
+
+.stat-icon-img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+.stat-value {
+    display: block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+.pixel-frame {
+    position: relative;
+    border: 4px solid var(--neon-green);
+    border-radius: 12px;
+    padding: 1rem;
+    background: rgba(0, 255, 136, 0.1);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.pixel-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.frame-corners {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 16px;
+    opacity: 0.5;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* === SEÇÕES GERAIS === */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pixel-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+@keyframes titlePulse {
+    0% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); }
+    100% { text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green), 0 0 45px var(--neon-green); }
+}
+
+.title-icon-img {
+    width: 35px;
+    height: 35px;
+    margin: 0 1rem;
+    filter: drop-shadow(0 0 10px var(--neon-green));
+    animation: iconSpin 4s linear infinite;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.section-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === TRILHAS SECTION === */
+.trilhas-section {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+    border: 3px solid var(--neon-blue);
+    border-radius: 15px;
+    margin: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+}
+
+.trilhas-map {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+.trilha-card {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 4px solid var(--neon-green);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+}
+
+.trilha-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+}
+
+.trilha-featured {
+    border-color: var(--gold);
+    background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+.trilha-featured:hover {
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+}
+
+.trilha-connection {
+    display: none;
+}
+
+.trilha-connection-right {
+    display: none;
+}
+
+.trilha-connection-left {
+    display: none;
+}
+
+.trilha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.trilha-badge {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+.trilha-level {
+    background: rgba(0, 255, 136, 0.2);
+    border: 2px solid var(--neon-green);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.trilha-level.legendary {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.level-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--neon-green);
+}
+
+.trilha-level.legendary .level-text {
+    color: var(--gold);
+}
+
+.trilha-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.trilha-description {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.trilha-rewards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.reward-item {
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid var(--neon-green);
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--neon-green);
+    border-radius: 4px;
+}
+
+.reward-item.legendary {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-green);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar.legendary {
+    border-color: var(--gold);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    transition: width 0.5s ease;
+}
+
+.progress-bar.legendary .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 100%);
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: var(--white);
+    text-shadow: 0 0 5px var(--bg-darker);
+    white-space: nowrap;
+}
+
+/* === BADGES SECTION === */
+.badges-section {
+    padding: 6rem 2rem;
+    background: var(--bg-dark);
+    border: 3px solid var(--neon-purple);
+    border-radius: 15px;
+    margin: 2rem;
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+}
+
+.badges-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.badge-card {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 4px solid var(--neon-blue);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.badge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+.badge-card.legendary {
+    border-color: var(--gold);
+    background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+.badge-card.legendary:hover {
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+}
+
+.badge-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.badge-card.legendary .badge-image {
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+.badge-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.badge-description {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.badge-reward {
+    background: rgba(0, 212, 255, 0.2);
+    border: 2px solid var(--neon-blue);
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: var(--neon-blue);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.badge-reward.legendary {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255, 215, 0, 0.2);
+}
+
+/* === PROFILE EXAMPLE SECTION === */
+.profile-example-section {
+    padding: 6rem 2rem;
+    background: var(--bg-dark);
+}
+
+.profile-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 4px solid var(--neon-pink);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    grid-template-areas: 
+        "header header"
+        "skills badges"
+        "trails achievements";
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--neon-pink);
+    grid-area: header;
+}
+
+.profile-avatar {
+    position: relative;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    object-fit: cover;
+    object-position: center;
+}
+
+.level-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+    color: var(--bg-darker);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', monospace;
+    border: 4px solid var(--bg-darker);
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: levelPulse 2s ease-in-out infinite;
+}
+
+@keyframes levelPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.level-number {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.level-text {
+    font-size: 0.45rem;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-character {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-img {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.5));
+}
+
+.profile-badges-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-self: flex-start;
+    margin-left: 2rem;
+}
+
+.profile-badges-unlocked {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.profile-badges-locked {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.badge-unlocked {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.badge-locked {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+}
+
+.badge-unlocked:hover {
+    transform: translateY(-5px) scale(1.15);
+}
+
+.badge-locked:hover {
+    opacity: 0.6;
+}
+
+.badge-unlocked-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
+}
+
+.badge-locked-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.5);
+}
+
+.profile-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.profile-title {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: var(--neon-blue);
+    margin-bottom: 1.5rem;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat-box {
+    background: rgba(236, 72, 153, 0.1);
+    border: 2px solid var(--neon-pink);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: var(--neon-pink);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.gold-box {
+    border: none;
+    background: transparent;
+}
+
+.gold-box .stat-number {
+    color: var(--gold);
+}
+
+.gold-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+}
+
+/* Profile Sections */
+.profile-section {
+    margin-bottom: 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--gray-dark);
+    border-radius: 12px;
+}
+
+/* Grid Areas */
+.profile-section:nth-of-type(2) {
+    grid-area: skills;
+}
+
+.profile-section:nth-of-type(3) {
+    grid-area: badges;
+}
+
+.profile-section:nth-of-type(4) {
+    grid-area: trails;
+}
+
+.profile-section:nth-of-type(5) {
+    grid-area: achievements;
+}
+
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    color: var(--neon-green);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: var(--neon-blue);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-name {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--white);
+    min-width: 100px;
+}
+
+.skill-bar {
+    flex: 1;
+    height: 20px;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-green);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    transition: width 0.5s ease;
+}
+
+/* Badges Showcase */
+.badges-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.badge-item {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--gray-dark);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.badge-item.earned {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.badge-item.earned.legendary {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.badge-item.locked {
+    opacity: 0.5;
+}
+
+.badge-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+}
+
+.badge-item.earned.legendary .badge-icon {
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+.badge-item.locked i {
+    font-size: 2.5rem;
+    color: var(--gray-dark);
+    flex-shrink: 0;
+}
+
+.badge-name {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--white);
+    flex: 1;
+}
+
+/* Trails Progress */
+.trails-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--gray-dark);
+    border-radius: 8px;
+}
+
+.trail-item.completed {
+    border-color: var(--neon-green);
+}
+
+.trail-item.in-progress {
+    border-color: var(--neon-blue);
+}
+
+.trail-icon {
+    flex-shrink: 0;
+}
+
+.trail-image {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+.trail-info {
+    flex: 1;
+}
+
+.trail-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.trail-progress-bar {
+    width: 100%;
+    height: 15px;
+    background: var(--bg-darker);
+    border: 1px solid var(--gray-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.trail-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.trail-fill.completed {
+    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+}
+
+.trail-fill.in-progress {
+    background: linear-gradient(90deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+}
+
+.trail-status {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+}
+
+.trail-status.completed {
+    color: var(--neon-green);
+}
+
+.trail-status.in-progress {
+    color: var(--neon-blue);
+}
+
+/* Achievements Timeline */
+.achievements-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--neon-purple);
+    border-radius: 8px;
+}
+
+.achievement-date {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: var(--neon-purple);
+    min-width: 60px;
+    text-align: center;
+}
+
+.achievement-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.achievement-icon {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 10px var(--neon-purple));
+}
+
+.achievement-text strong {
+    font-family: 'Orbitron', monospace;
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.achievement-text p {
+    font-family: 'VT323', monospace;
+    color: var(--gray);
+    margin: 0;
+}
+
+/* === VIP ADVANTAGES SECTION === */
+.vip-advantages-section {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+}
+
+.vip-title {
+    color: var(--gold);
+    font-size: 2.1rem;
+}
+
+.vip-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.vip-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.plan-card {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 4px solid var(--gray-dark);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: visible;
+}
+
+.plan-card::before,
+.plan-card::after {
+    display: none !important;
+}
+
+.vip-plan {
+    border-color: var(--gold);
+    background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
+    z-index: 5;
+}
+
+.plan-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.plan-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 0.3rem 0.8rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    border-radius: 4px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+}
+
+.plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.feature-item {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.feature-item.disabled {
+    color: var(--gray-dark);
+}
+
+.feature-item.vip {
+    color: var(--gold);
+}
+
+.vip-benefits {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.benefits-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.benefit-item {
+    background: rgba(255, 215, 0, 0.1);
+    border: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.8rem;
+    filter: drop-shadow(0 0 8px var(--gold));
+}
+
+.benefit-item h4 {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+}
+
+.benefit-item p {
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.3;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 1024px) {
+    .profile-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "skills"
+            "badges"
+            "trails"
+            "achievements";
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .main-title-section {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .glitch-text {
+        font-size: 2rem;
+    }
+    
+    .trilhas-map {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .trilha-connection {
+        display: none;
+    }
+    
+    .vip-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    /* Profile responsiveness */
+    .profile-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "skills"
+            "badges"
+            "trails"
+            "achievements";
+        gap: 2rem;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .character-img {
+        width: 120px;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .badges-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .badge-item {
+        justify-content: flex-start;
+    }
+    
+    .trail-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-content {
+        justify-content: center;
+    }
+}

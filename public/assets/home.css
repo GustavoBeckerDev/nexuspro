@@ -1,0 +1,1237 @@
+/* ============================================
+   VDVAGAS - HOME CONSOLIDADO CSS
+   ============================================ */
+
+/* --- VARIÁVEIS --- */
+:root {
+    --bg-dark: #0a1520;
+    --bg-darker: #050a10;
+    --neon-green: #00ff88;
+    --neon-green-dark: #00cc66;
+    --neon-blue: #00d4ff;
+    --neon-purple: #aa00ff;
+    --neon-pink: #ff00ff;
+    --gold: #ffd700;
+    --gold-dark: #ffaa00;
+    --orange: #ff8844;
+    --white: #ffffff;
+    --gray: #cccccc;
+    --gray-dark: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-darker);
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#home.pixel-game {
+    background: var(--bg-darker);
+    position: relative;
+}
+
+/* Efeito scanline removido */
+#home.pixel-game::before {
+    display: none;
+}
+
+
+/* --- TIPOGRAFIA PIXEL --- */
+#home .pixel-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: var(--neon-green);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+#home .title-icon {
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#home .section-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#home .section-header {
+    margin-bottom: 4rem;
+}
+
+/* BOTÕES PIXEL */
+#home .btn-pixel {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+    border: 3px solid;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    min-width: 280px;
+    text-align: center;
+}
+
+#home .btn-pixel.btn-primary {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    box-shadow: 
+        0 0 10px var(--neon-green),
+        inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+#home .btn-pixel.btn-primary:hover {
+    background: var(--neon-green);
+    color: var(--bg-darker);
+    box-shadow: 
+        0 0 20px var(--neon-green),
+        0 0 40px var(--neon-green);
+    transform: translateY(-3px);
+}
+
+#home .btn-pixel.btn-secondary {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 
+        0 0 10px var(--gold),
+        inset 0 0 10px rgba(255, 215, 0, 0.1);
+    min-width: 320px;
+}
+
+#home .btn-pixel.btn-secondary:hover {
+    background: var(--gold);
+    color: var(--bg-darker);
+    box-shadow: 
+        0 0 20px var(--gold),
+        0 0 40px var(--gold);
+    transform: translateY(-3px);
+}
+
+/* --- HERO GAMIFICADO --- */
+#home .hero-game {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: var(--bg-darker);
+    overflow: hidden;
+}
+
+#home .hero-game::before {
+    display: none;
+}
+
+#home .hero-content {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Imagens de badges no hero */
+#home .hero-badge-images {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+#home .badge-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+    transition: all 0.3s ease;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+#home .badge-img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#home .badge-img:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#home .badge-img:nth-child(3) {
+    animation-delay: 1s;
+}
+
+#home .badge-img:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+#home .badge-img:nth-child(5) {
+    animation-delay: 2s;
+}
+
+#home .badge-img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8));
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#home .glitch-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--neon-green);
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-shadow: none !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    letter-spacing: 0.1em;
+}
+
+#home .subtitle-pixel {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+#home .highlight {
+    color: var(--neon-green);
+    font-weight: bold;
+    font-family: inherit;
+}
+
+#home .brand-highlight {
+    color: var(--gold);
+    font-weight: bold;
+    font-family: inherit;
+}
+
+#home .hero-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+/* Container dos badges superiores (LEVEL UP, XP, CONQUISTAS) */
+#home .hero-badges {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+#home .pixel-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 
+        0 0 20px var(--neon-blue),
+        inset 0 0 10px rgba(0, 212, 255, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+#home .pixel-badge i {
+    font-size: 0.9rem;
+}
+
+#home .badge-text {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+#home .pixel-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 30px var(--neon-blue),
+        inset 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Badge XP - Dourado */
+#home .badge-xp {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 
+        0 0 20px var(--gold),
+        inset 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+#home .badge-xp:hover {
+    box-shadow: 
+        0 0 30px var(--gold),
+        inset 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Badge Conquistas - Verde */
+#home .badge-achievement {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    box-shadow: 
+        0 0 20px var(--neon-green),
+        inset 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+#home .badge-achievement:hover {
+    box-shadow: 
+        0 0 30px var(--neon-green),
+        inset 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+#home .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+#home .hero-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid var(--neon-green);
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+#home .hero-stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 136, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#home .hero-stat-item:hover {
+    background: rgba(0, 255, 136, 0.2);
+    border-color: var(--neon-green);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 136, 0.5),
+        inset 0 0 15px rgba(0, 255, 136, 0.2);
+    transform: translateY(-5px) scale(1.05);
+}
+
+#home .hero-stat-item:hover::before {
+    opacity: 1;
+}
+
+#home .hero-stat-item:hover .stat-icon {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+#home .stat-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+#home .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Frame Pixel Art */
+#home .pixel-frame {
+    position: relative;
+    border: 4px dashed var(--neon-green);
+    border-radius: 20px;
+    padding: 2rem;
+    background: rgba(0, 255, 136, 0.05);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    overflow: hidden;
+}
+
+#home .pixel-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.5));
+    border-radius: 15px;
+}
+
+/* --- TRILHAS DE CONQUISTAS --- */
+#home .quests-section {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+    position: relative;
+}
+
+#home .quests-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#home .quest-card {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 3px solid var(--neon-green);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#home .quest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 10px 40px rgba(0, 255, 136, 0.4),
+        0 0 60px rgba(0, 255, 136, 0.2);
+    border-color: var(--neon-blue);
+}
+
+#home .quest-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+#home .quest-card.featured:hover {
+    box-shadow: 
+        0 10px 40px rgba(255, 215, 0, 0.5),
+        0 0 60px rgba(255, 215, 0, 0.3);
+}
+
+#home .quest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+#home .quest-badge {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+#home .quest-level {
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+#home .quest-level > .level-text {
+    color: inherit;
+}
+
+#home .quest-level.legendary {
+    background: transparent;
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+#home .quest-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+#home .quest-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+#home .quest-rewards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+#home .reward-item {
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid var(--neon-green);
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: var(--neon-green);
+}
+
+#home .reward-item.legendary {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+#home .progress-bar {
+    width: 100%;
+    height: 30px;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-green);
+    position: relative;
+    overflow: hidden;
+}
+
+#home .progress-bar.legendary {
+    border-color: var(--gold);
+}
+
+#home .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    transition: width 0.5s ease;
+}
+
+#home .progress-bar.legendary .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 100%);
+}
+
+#home .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+}
+
+@media (max-width: 1024px) {
+    #home .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    #home .hero-text {
+        order: 2;
+    }
+    
+    #home .hero-image {
+        order: 1;
+    }
+    
+    #home .pixel-title {
+        font-size: 1.5rem;
+    }
+    
+    #home .glitch-text {
+        font-size: 2.5rem;
+    }
+    
+    #home .about-feature {
+        grid-template-columns: 1fr;
+    }
+    
+    #home .feature-image {
+        order: 1;
+    }
+    
+    #home .feature-text {
+        order: 2;
+    }
+    
+    #home .contact-container-pixel {
+        grid-template-columns: 1fr;
+    }
+    
+    #home .about-cards-pixel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    #home .hero-stats {
+        gap: 0.8rem;
+    }
+    
+    #home .hero-stat-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.35rem;
+        min-width: 140px;
+        max-width: 160px;
+    }
+    
+    #home .hero-stat-item .stat-icon {
+        font-size: 0.6rem;
+    }
+    
+    #home .quests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    #home .quest-card {
+        padding: 1.5rem;
+    }
+    
+    #home .quest-level {
+        font-size: 0.55rem;
+        padding: 0.45rem 0.9rem;
+    }
+    
+    #home .pixel-title {
+        font-size: 1.2rem;
+    }
+    
+    #home .glitch-text {
+        font-size: 2rem;
+    }
+    
+    #home .subtitle-pixel {
+        font-size: 1.2rem;
+    }
+    
+    #home .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    #home .hero-stats {
+        justify-content: center;
+    }
+    
+    #home .hero-buttons {
+        justify-content: center;
+    }
+    
+    #home .btn-pixel {
+        font-size: 0.7rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    #home .jobs-grid-pixel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #home .hero-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    #home .hero-stat-item {
+        min-width: 200px;
+        max-width: 250px;
+        width: 100%;
+        padding: 0.5rem 1.2rem;
+    }
+    
+    #home .quests-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #home .quest-card {
+        padding: 1.5rem;
+    }
+    
+    #home .quest-level {
+        font-size: 0.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    #home .glitch-text {
+        font-size: 1.5rem;
+    }
+    
+    #home .subtitle-pixel {
+        font-size: 1rem;
+    }
+    
+    #home .pixel-title {
+        font-size: 1rem;
+    }
+    
+    #home .section-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- VAGAS GAMIFICADAS --- */
+#home .jobs-game {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+}
+
+#home .jobs-grid-pixel {
+    max-width: 1400px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+#home .job-card-pixel {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 3px solid var(--neon-green);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#home .job-card-pixel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+#home .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#home .job-icon {
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Cores dos ícones baseadas na raridade */
+#home .job-card-pixel:has(.job-difficulty.common) .job-icon {
+    color: var(--neon-green);
+    filter: drop-shadow(0 0 8px var(--neon-green));
+}
+
+#home .job-card-pixel:has(.job-difficulty.rare) .job-icon {
+    color: var(--neon-blue);
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+}
+
+#home .job-card-pixel:has(.job-difficulty.epic) .job-icon {
+    color: var(--neon-purple);
+    filter: drop-shadow(0 0 8px var(--neon-purple));
+}
+
+#home .job-card-pixel:has(.job-difficulty.legendary) .job-icon {
+    color: var(--gold);
+    filter: drop-shadow(0 0 8px var(--gold));
+}
+
+#home .job-difficulty {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid;
+}
+
+#home .job-difficulty.common {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+#home .job-difficulty.rare {
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+#home .job-difficulty.epic {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+#home .job-difficulty.legendary {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+#home .job-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+#home .job-company {
+    font-size: 1.1rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+#home .job-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#home .job-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+#home .tag {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--neon-green);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+}
+
+#home .job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#home .job-xp {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-shadow: 0 0 5px var(--gold);
+}
+
+#home .btn-apply {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#home .btn-apply:hover {
+    background: var(--neon-green);
+    color: var(--bg-darker);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+#home .see-all-pixel {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#home .see-all-pixel .btn-pixel {
+    min-width: auto;
+    max-width: 400px;
+    padding: 1rem 2rem;
+    display: inline-block;
+}
+
+/* --- SOBRE O JOGO GAMIFICADO --- */
+#home .about-game {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+}
+
+#home .about-cards-pixel {
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#home .about-card-pixel {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 3px solid var(--neon-green);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#home .about-card-pixel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.4);
+}
+
+/* Cores específicas dos cards */
+#home .about-card-pixel.card-blue {
+    border-color: var(--neon-blue);
+}
+
+#home .about-card-pixel.card-blue:hover {
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+}
+
+#home .about-card-pixel.card-blue .card-title {
+    color: var(--neon-blue);
+}
+
+#home .about-card-pixel.card-blue .card-icon {
+    color: var(--neon-blue);
+}
+
+#home .about-card-pixel.card-blue .stat {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+#home .about-card-pixel.card-yellow {
+    border-color: var(--gold);
+}
+
+#home .about-card-pixel.card-yellow:hover {
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+}
+
+#home .about-card-pixel.card-yellow .card-title {
+    color: var(--gold);
+}
+
+#home .about-card-pixel.card-yellow .card-icon {
+    color: var(--gold);
+}
+
+#home .about-card-pixel.card-yellow .stat {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+#home .about-card-pixel.card-purple {
+    border-color: var(--neon-purple);
+}
+
+#home .about-card-pixel.card-purple:hover {
+    box-shadow: 0 10px 40px rgba(170, 0, 255, 0.4);
+}
+
+#home .about-card-pixel.card-purple .card-title {
+    color: var(--neon-purple);
+}
+
+#home .about-card-pixel.card-purple .card-icon {
+    color: var(--neon-purple);
+}
+
+#home .about-card-pixel.card-purple .stat {
+    background: rgba(170, 0, 255, 0.1);
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+#home .about-card-pixel.featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+#home .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#home .card-icon.legendary {
+    filter: drop-shadow(0 0 20px var(--gold));
+}
+
+#home .card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+#home .card-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+#home .card-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#home .stat {
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid var(--neon-green);
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: var(--neon-green);
+}
+
+#home .about-feature {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+#home .pixel-frame-large {
+    border: 4px dashed var(--neon-purple);
+    border-radius: 20px;
+    padding: 2rem;
+    background: rgba(170, 0, 255, 0.05);
+    box-shadow: 
+        0 0 30px rgba(170, 0, 255, 0.3),
+        inset 0 0 30px rgba(170, 0, 255, 0.1);
+    overflow: hidden;
+}
+
+#home .pixel-frame-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 20px rgba(170, 0, 255, 0.5));
+    border-radius: 15px;
+}
+
+#home .feature-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+#home .feature-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+#home .feature-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+#home .feature-list li {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#home .list-icon {
+    font-size: 1.5rem;
+}
+
+/* Cores neon para cada feature */
+#home .feature-list .feature-green {
+    color: var(--neon-green);
+}
+
+#home .feature-list .feature-green .list-icon {
+    color: var(--neon-green);
+    filter: drop-shadow(0 0 8px var(--neon-green));
+}
+
+#home .feature-list .feature-blue {
+    color: var(--neon-blue);
+}
+
+#home .feature-list .feature-blue .list-icon {
+    color: var(--neon-blue);
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+}
+
+#home .feature-list .feature-purple {
+    color: var(--neon-purple);
+}
+
+#home .feature-list .feature-purple .list-icon {
+    color: var(--neon-purple);
+    filter: drop-shadow(0 0 8px var(--neon-purple));
+}
+
+#home .feature-list .feature-pink {
+    color: #00bfff;
+}
+
+#home .feature-list .feature-pink .list-icon {
+    color: #00bfff;
+    filter: drop-shadow(0 0 8px #00bfff);
+}
+
+/* --- CONTATO GAMIFICADO --- */
+#home .contact-game {
+    padding: 6rem 2rem;
+    background: var(--bg-darker);
+}
+
+#home .contact-container-pixel {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+}
+
+#home .contact-form-pixel {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 3px solid var(--neon-green);
+    padding: 2rem;
+}
+
+#home .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#home .form-group label {
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: var(--neon-green);
+    margin-bottom: 0.8rem;
+}
+
+#home .form-group input,
+#home .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-green);
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#home .form-group input:focus,
+#home .form-group textarea:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+#home .btn-submit {
+    width: 100%;
+}
+
+#home .map-pixel {
+    border: 3px solid var(--neon-green);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    height: 300px;
+}
+
+#home .map-pixel iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#home .social-section {
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 3px solid var(--neon-green);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#home .social-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: var(--neon-green);
+    margin-bottom: 0;
+    letter-spacing: 0.1em;
+}
+
+#home .social-icons-pixel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+#home .social-link {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#home .social-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+#home .social-link:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.5);
+}
+
+#home .social-link:hover .social-icon-img {
+    transform: scale(1.05);
+}

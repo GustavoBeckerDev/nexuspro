@@ -1,0 +1,570 @@
+/* ============================================
+   HEADER PIXEL ART GAMIFICADO
+   ============================================ */
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background: #050a10;
+    overflow-x: hidden;
+}
+
+/* --- HEADER PIXEL ART --- */
+.header-pixel {
+    background: #050a10;
+    padding: 1.5rem 2rem;
+    position: relative;
+    border-bottom: 4px solid #00ff88;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+    z-index: 1000;
+}
+
+/* Partículas de fundo */
+.header-particles {
+    display: none;
+}
+
+@keyframes headerParticles {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    gap: 2rem;
+}
+
+/* --- LOGO PIXEL ART --- */
+.logo-container-pixel {
+    position: relative;
+}
+
+.logo-frame {
+    padding: 0;
+    background: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.logo-frame:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        background-position: 
+            20% 30%, 80% 20%, 30% 70%, 70% 80%, 50% 50%,
+            0 0, 0 0, 0 0, center, 0 0;
+    }
+    25% {
+        background-position: 
+            25% 35%, 75% 25%, 35% 65%, 65% 75%, 50% 50%,
+            5px 5px, -5px -5px, 0 0, center, 10px 10px;
+    }
+    50% {
+        background-position: 
+            30% 40%, 70% 30%, 40% 60%, 60% 70%, 50% 50%,
+            10px 10px, -10px -10px, 0 0, center, 20px 20px;
+    }
+    75% {
+        background-position: 
+            25% 35%, 75% 25%, 35% 65%, 65% 75%, 50% 50%,
+            5px 5px, -5px -5px, 0 0, center, 10px 10px;
+    }
+}
+
+.logo-frame img {
+    max-height: 100px;
+    width: auto;
+    display: block;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
+}
+
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* --- NAVEGAÇÃO PIXEL --- */
+.nav-pixel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 255, 136, 0.05);
+    border: 2px solid transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.link-icon {
+    font-size: 1rem;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 136, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+/* Links ativos */
+body[data-page="home"] .nav-link[href$="/"],
+body[data-page="vagas"] .nav-link[href$="/vagas"],
+body[data-page="about"] .nav-link[href$="/about"],
+body[data-page="contato"] .nav-link[href$="/contato"],
+body[data-page="planos"] .nav-link[href$="/planos"] {
+    border-color: #00ff88;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.15);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* --- BOTÕES HEADER PIXEL --- */
+.header-buttons-pixel {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    /* push public header buttons to the far right when present */
+    margin-left: auto;
+}
+
+.btn-pixel-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    border: 3px solid;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    font-size: 1rem;
+}
+
+.btn-pixel-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.btn-pixel-header:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-login-pixel {
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.btn-login-pixel:hover {
+    background: #00ff88;
+    color: #050a10;
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-signup-pixel {
+    border-color: #ffd700;
+    color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.btn-signup-pixel:hover {
+    background: #ffd700;
+    color: #050a10;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+/* --- BARRA NEON INFERIOR --- */
+.header-bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #00ff88, #00d4ff, #00ff88, transparent);
+    box-shadow: 0 0 20px #00ff88;
+    animation: gradientShift 5s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* --- RESPONSIVIDADE PIXEL --- */
+@media (max-width: 1200px) {
+    .header-content {
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 0.55rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .btn-pixel-header {
+        font-size: 0.6rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-pixel {
+        padding: 1.5rem 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-pixel {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-link {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+
+    .header-buttons-pixel {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btn-pixel-header {
+        flex: 1;
+        max-width: 200px;
+        justify-content: center;
+    }
+
+    .logo-frame img {
+        max-height: 85px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-pixel {
+        padding: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.5rem;
+        padding: 0.5rem;
+        gap: 0.3rem;
+    }
+    
+    .link-icon {
+        font-size: 0.9rem;
+    }
+    
+    .btn-pixel-header {
+        font-size: 0.55rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .btn-icon {
+        font-size: 0.9rem;
+    }
+    
+    .logo-frame img {
+        max-height: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-pixel {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: flex-start;
+        padding: 0.7rem 1rem;
+    }
+    
+    .header-buttons-pixel {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-pixel-header {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .logo-frame img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 0.45rem;
+    }
+    
+    .btn-pixel-header {
+        font-size: 0.5rem;
+    }
+}
+
+/* ==========================
+   ESTILOS PARA USUÁRIO AUTENTICADO
+   (classes únicas para evitar conflito)
+   ========================== */
+.user-nav-pixel {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    /* center horizontally in the header using absolute positioning on wide screens */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    justify-content: center;
+}
+
+.auth-link {
+    /* match .nav-link style for visual consistency */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 255, 136, 0.05);
+    border: 2px solid transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.auth-link .link-icon {
+    font-size: 1rem;
+}
+
+.auth-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 136, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.auth-link:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    transform: translateY(-2px);
+}
+
+.auth-link:hover::before {
+    opacity: 1;
+}
+
+/* Estado ativo visual (quando a página atual corresponde ao link) */
+.auth-link.is-active {
+    border-color: #00ff88;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.15);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    transform: translateY(-2px);
+}
+
+.auth-link.is-active::before {
+    opacity: 1;
+}
+
+.auth-controls-pixel {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    /* ensure logout controls sit at the far right of the header */
+    margin-left: auto;
+}
+
+.btn-logout-pixel {
+    /* icon-only logout button: red neon style, square and centered */
+    border-color: #ff4d4f;
+    color: #ff6b6b;
+    box-shadow: 0 0 12px rgba(255, 77, 79, 0.22);
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.btn-logout-pixel .btn-icon {
+    font-size: 1.05rem;
+}
+
+.btn-logout-pixel:hover {
+    background: #ff4d4f;
+    color: #050a10;
+    box-shadow: 0 0 28px rgba(255, 77, 79, 0.45);
+    transform: translateY(-3px);
+}
+
+/* When in small-screen layout where controls expand full width, keep the button reasonable */
+@media (max-width: 600px) {
+    .btn-logout-pixel {
+        width: 100%;
+        height: auto;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        justify-content: center;
+    }
+
+    .btn-logout-pixel .btn-icon {
+        margin-right: 0;
+    }
+}
+
+/* Remove underline only for the logout anchor; keep focus outline for accessibility */
+.btn-logout-pixel,
+.btn-logout-pixel:link,
+.btn-logout-pixel:visited,
+.btn-logout-pixel:hover,
+.btn-logout-pixel:active {
+    text-decoration: none;
+}
+
+.btn-logout-pixel:focus {
+    text-decoration: none;
+    outline: 3px solid rgba(255, 77, 79, 0.15);
+    outline-offset: 2px;
+}
+
+/* Responsividade para área autenticada */
+@media (max-width: 1024px) {
+    .user-nav-pixel {
+        /* revert to normal flow on smaller screens */
+        position: static;
+        transform: none;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .auth-controls-pixel {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-logout-pixel {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-nav-pixel {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .auth-link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.65rem 1rem;
+    }
+
+    .auth-controls-pixel {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .btn-logout-pixel {
+        width: 100%;
+    }
+}

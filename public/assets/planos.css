@@ -1,0 +1,690 @@
+/* ============================================
+   PLANOS PAGE - PIXEL ART GAMIFICADO CSS
+   ============================================ */
+
+/* --- VARIÁVEIS --- */
+:root {
+    --bg-dark: #0a1520;
+    --bg-darker: #050a10;
+    --neon-green: #00ff88;
+    --neon-green-dark: #00cc66;
+    --neon-blue: #00d4ff;
+    --neon-purple: #aa00ff;
+    --neon-pink: #ff00ff;
+    --gold: #ffd700;
+    --gold-dark: #ffaa00;
+    --orange: #ff8844;
+    --white: #ffffff;
+    --gray: #cccccc;
+    --gray-dark: #666666;
+    --red: #ff4444;
+}
+
+/* --- RESET E BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-darker);
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- MAIN CONTAINER --- */
+.planos-main {
+    background: var(--bg-darker);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito scanline */
+.planos-main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- PARTÍCULAS PIXEL ART --- */
+.pixel-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--neon-green), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--gold), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--neon-blue), transparent);
+    background-size: 200% 200%;
+    animation: particleFloat 20s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+@keyframes particleFloat {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+}
+
+/* --- HERO SECTION --- */
+.hero-planos {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    border-bottom: 3px solid var(--neon-blue);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#planos .hero-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 1.2rem;
+    letter-spacing: 1.6px;
+}
+
+#planos .title-icon {
+    display: inline-block;
+    animation: rocketPulse 2s ease-in-out infinite;
+    margin-right: 1rem;
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 10px var(--orange));
+}
+
+@keyframes rocketPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.hero-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: var(--gray);
+    margin-bottom: 1.6rem;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: var(--neon-blue);
+    font-size: 0.9rem;
+}
+
+.stat-item i {
+    color: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* --- SEÇÃO DE PLANOS --- */
+.planos-section {
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+    position: relative;
+    z-index: 2;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+#planos .section-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.4rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.title-gold-icon {
+    width: 32px;
+    height: 32px;
+    animation: goldSpin 3s linear infinite;
+    filter: drop-shadow(0 0 8px var(--gold));
+}
+
+.title-gold-icon.left {
+    animation-direction: normal;
+}
+
+.title-gold-icon.right {
+    animation-direction: reverse;
+}
+
+@keyframes goldSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gamepadSpin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* --- CARROSSEL DE PLANOS --- */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    padding: 2rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scrollLoop 25s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausar carrossel ao passar o mouse */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* --- CARDS DE PLANOS --- */
+.plan-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-green-dark);
+    border-radius: 12px;
+    padding: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 16px rgba(0, 255, 136, 0.2);
+    width: 280px;
+    min-width: 280px;
+    flex-shrink: 0;
+}
+
+.plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.5s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.plan-card:hover::before {
+    left: 100%;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-green);
+}
+
+/* PLANO BÁSICO */
+.plan-card.basic {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.plan-card.basic:hover {
+    border-color: var(--neon-blue);
+}
+
+/* PLANO AVANÇADO */
+.plan-card.advanced {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 20px rgba(170, 0, 255, 0.2);
+    position: relative;
+}
+
+.plan-card.advanced:hover {
+    border-color: var(--neon-purple);
+}
+
+.plan-card.advanced * {
+    position: relative;
+    z-index: 3;
+}
+
+/* PLANO PREMIUM */
+.plan-card.premium {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.plan-card.premium:hover {
+    border-color: var(--gold);
+}
+
+.plan-card.featured {
+    position: relative;
+    overflow: visible;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 16px;
+    background: var(--gold);
+    color: var(--bg-darker);
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.48rem;
+    font-weight: bold;
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* PLANO EMPRESA */
+.plan-card.enterprise {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.plan-card.enterprise:hover {
+    border-color: var(--neon-pink);
+}
+
+/* --- ELEMENTOS DOS CARDS --- */
+.plan-header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.plan-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--neon-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.8rem;
+    box-shadow: 0 0 16px rgba(0, 255, 136, 0.5);
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.plan-icon i {
+    font-size: 1.2rem;
+    color: var(--bg-darker);
+}
+
+.plan-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 8px currentColor;
+}
+
+.plan-level {
+    font-family: 'VT323', monospace;
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+/* --- PREÇOS --- */
+.plan-price {
+    text-align: center;
+    margin: 1.2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.currency {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--gray);
+    vertical-align: top;
+}
+
+.amount {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--neon-green);
+    text-shadow: 0 0 12px currentColor;
+    margin: 0 0.16rem;
+}
+
+.period {
+    font-family: 'VT323', monospace;
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+/* --- RECURSOS --- */
+.plan-features {
+    margin: 1.6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.64rem;
+    margin-bottom: 0.8rem;
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+}
+
+.feature-item i {
+    color: var(--neon-green);
+    font-size: 1rem;
+    width: 16px;
+}
+
+.feature-item.disabled i {
+    color: var(--red);
+}
+
+.feature-item.disabled span {
+    color: var(--gray-dark);
+    text-decoration: line-through;
+}
+
+/* --- BOTÕES DOS PLANOS --- */
+.plan-button {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-green);
+    border-radius: 6px;
+    color: var(--neon-green);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.64rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.plan-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--neon-green);
+    transition: left 0.3s;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.plan-button:hover::before {
+    left: 0;
+}
+
+.plan-button:hover {
+    color: var(--bg-darker);
+    border-color: var(--neon-green);
+    transform: translateY(-2px);
+}
+
+.plan-button i {
+    margin-right: 0.5rem;
+}
+
+/* Cores específicas dos botões */
+.plan-card.basic .plan-button {
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.plan-card.basic .plan-button::before {
+    background: var(--neon-blue);
+}
+
+.plan-card.basic .plan-button:hover {
+    border-color: var(--neon-blue);
+}
+
+.plan-card.advanced .plan-button {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+.plan-card.advanced .plan-button::before {
+    background: var(--neon-purple);
+}
+
+.plan-card.advanced .plan-button:hover {
+    border-color: var(--neon-purple);
+}
+
+.plan-card.premium .plan-button {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.plan-card.premium .plan-button::before {
+    background: var(--gold);
+}
+
+.plan-card.premium .plan-button:hover {
+    border-color: var(--gold);
+}
+
+.plan-card.enterprise .plan-button {
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.plan-card.enterprise .plan-button::before {
+    background: var(--neon-pink);
+}
+
+.plan-card.enterprise .plan-button:hover {
+    border-color: var(--neon-pink);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1200px) {
+    .carousel-track {
+        animation: scrollLoop 30s linear infinite;
+        gap: 1.5rem;
+    }
+    
+    .plan-card {
+        width: 260px;
+        min-width: 260px;
+    }
+    
+    #planos .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    #planos .title-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #planos .section-title {
+        font-size: 1.2rem;
+        gap: 1.2rem;
+    }
+    
+    .title-gold-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-planos {
+        padding: 1.6rem 0.8rem;
+    }
+    
+    #planos .hero-title {
+        font-size: 1.2rem;
+    }
+    
+    #planos .title-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.12rem;
+    }
+    
+    .hero-stats {
+        gap: 1.2rem;
+    }
+    
+    .planos-section {
+        padding: 1.6rem 0.8rem;
+    }
+    
+    .carousel-track {
+        animation: scrollLoop 35s linear infinite;
+        gap: 1.2rem;
+    }
+    
+    .plan-card {
+        width: 240px;
+        min-width: 240px;
+        padding: 1.2rem;
+    }
+    
+    .plan-button {
+        font-size: 0.56rem;
+        padding: 0.64rem 1.2rem;
+    }
+    
+    #planos .section-title {
+        gap: 1rem;
+    }
+    
+    .title-gold-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    #planos .hero-title {
+        font-size: 0.96rem;
+    }
+    
+    #planos .title-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    #planos .section-title {
+        font-size: 0.96rem;
+        gap: 0.8rem;
+    }
+    
+    .title-gold-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .carousel-track {
+        animation: scrollLoop 40s linear infinite;
+        gap: 1rem;
+    }
+    
+    .plan-card {
+        width: 220px;
+        min-width: 220px;
+        padding: 0.8rem;
+    }
+    
+    .plan-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .plan-icon i {
+        font-size: 0.96rem;
+    }
+    
+    .amount {
+        font-size: 1.6rem;
+    }
+    
+    .plan-button {
+        font-size: 0.48rem;
+        padding: 0.56rem 0.8rem;
+    }
+    
+    .featured-badge {
+        font-size: 0.4rem;
+        padding: 0.24rem 0.64rem;
+    }
+}
