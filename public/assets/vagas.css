@@ -4,20 +4,26 @@
 
 /* --- VARIÁVEIS --- */
 :root {
-    --bg-dark: #0a1520;
-    --bg-darker: #050a10;
-    --neon-green: #00ff88;
-    --neon-green-dark: #00cc66;
-    --neon-blue: #00d4ff;
-    --neon-purple: #aa00ff;
-    --neon-pink: #ff00ff;
-    --gold: #ffd700;
-    --gold-dark: #ffaa00;
-    --orange: #ff8844;
-    --white: #ffffff;
-    --gray: #cccccc;
-    --gray-dark: #666666;
-    --red: #ff4444;
+    --bg-dark: #0F172A;
+    /* Slate-900 */
+    --bg-darker: #020617;
+    /* Slate-950 */
+    --primary-purple: #8B5CF6;
+    /* Roxo */
+    --primary-purple-dark: #7C3AED;
+    --primary-pink: #EC4899;
+    /* Rosa */
+    --primary-blue: #3B82F6;
+    /* Azul */
+    --accent-pink: #F472B6;
+    --accent-gold: #F59E0B;
+    /* Dourado para VIP */
+    --accent-gold-dark: #D97706;
+    --orange: #F97316;
+    --white: #F8FAFC;
+    --gray: #CBD5E1;
+    --gray-dark: #64748B;
+    --red: #EF4444;
 }
 
 /* --- MAIN CONTAINER --- */
@@ -36,8 +42,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 92, 246, 0.03) 2px, rgba(139, 92, 246, 0.03) 4px);
     pointer-events: none;
     z-index: 1;
 }
@@ -47,7 +53,7 @@
 .filters-section {
     background: var(--bg-dark);
     padding: 1.5rem 2rem;
-    border-bottom: 2px solid var(--neon-blue);
+    border-bottom: 2px solid var(--primary-purple);
 }
 
 .filters-container {
@@ -134,8 +140,8 @@
 
 #vagas .btn-filter-inline {
     background: transparent;
-    border-color: var(--neon-green);
-    color: var(--neon-green);
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
 }
 
 #vagas .btn-filter-inline:hover {
@@ -202,8 +208,8 @@
 .filter-select:focus,
 .sort-select:focus {
     outline: none;
-    border-color: var(--neon-green);
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 .filter-actions {
@@ -258,7 +264,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         radial-gradient(1px 1px at 25% 25%, var(--gold), transparent),
         radial-gradient(1px 1px at 75% 75%, var(--neon-purple), transparent);
     background-size: 50px 50px;
@@ -267,8 +273,13 @@
 }
 
 @keyframes vipParticles {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 .vip-header {
@@ -306,11 +317,14 @@
 }
 
 @keyframes rocketFloat {
-    0%, 100% { 
+
+    0%,
+    100% {
         transform: translateY(0px) rotate(0deg);
         filter: drop-shadow(0 0 10px var(--gold));
     }
-    50% { 
+
+    50% {
         transform: translateY(-8px) rotate(5deg);
         filter: drop-shadow(0 0 20px var(--gold)) drop-shadow(0 0 30px var(--orange));
     }
@@ -328,8 +342,15 @@
 }
 
 @keyframes badgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .free-badge {
@@ -399,11 +420,14 @@
 }
 
 @keyframes goldSpark {
-    0%, 100% { 
+
+    0%,
+    100% {
         transform: scale(1) rotate(0deg);
         filter: drop-shadow(0 0 8px var(--gold));
     }
-    50% { 
+
+    50% {
         transform: scale(1.1) rotate(10deg);
         filter: drop-shadow(0 0 15px var(--gold)) drop-shadow(0 0 25px var(--orange));
     }
@@ -426,7 +450,7 @@
 /* --- VAGA CARDS --- */
 .vaga-card {
     background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
-    border: 3px solid var(--neon-green);
+    border: 3px solid var(--primary-purple);
     padding: 1.5rem;
     transition: all 0.3s ease;
     position: relative;
@@ -434,7 +458,7 @@
 
 .vaga-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
 }
 
 .vip-card {
@@ -480,15 +504,15 @@
 }
 
 .job-difficulty.epic {
-    border-color: var(--neon-purple);
-    color: var(--neon-purple);
-    box-shadow: 0 0 10px var(--neon-purple);
+    border-color: var(--primary-pink);
+    color: var(--primary-pink);
+    box-shadow: 0 0 10px var(--primary-pink);
 }
 
 .job-difficulty.legendary {
-    border-color: var(--gold);
-    color: var(--gold);
-    box-shadow: 0 0 10px var(--gold);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    box-shadow: 0 0 10px var(--accent-gold);
 }
 
 .job-title {
@@ -528,8 +552,8 @@
 .job-xp {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.8rem;
-    color: var(--gold);
-    text-shadow: 0 0 5px var(--gold);
+    color: var(--accent-gold);
+    text-shadow: 0 0 5px var(--accent-gold);
 }
 
 /* Estilos específicos VIP */
@@ -558,8 +582,13 @@
 }
 
 @keyframes xpGlow {
-    0% { text-shadow: 0 0 10px var(--gold); }
-    100% { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold); }
+    0% {
+        text-shadow: 0 0 10px var(--gold);
+    }
+
+    100% {
+        text-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold);
+    }
 }
 
 .vip-apply {
@@ -584,13 +613,13 @@
 
 
 .tag {
-    background: rgba(0, 255, 136, 0.2);
-    color: var(--neon-green);
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--primary-purple);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-family: 'VT323', monospace;
     font-size: 0.9rem;
-    border: 1px solid var(--neon-green);
+    border: 1px solid var(--primary-purple);
 }
 
 .tag.special {
@@ -604,8 +633,8 @@
     font-size: 0.6rem;
     padding: 0.8rem 1.5rem;
     background: transparent;
-    border: 2px solid var(--neon-green);
-    color: var(--neon-green);
+    border: 2px solid var(--primary-purple);
+    color: var(--primary-purple);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -621,7 +650,7 @@
 .jovem-aprendiz-section {
     background: var(--bg-darker);
     padding: 4rem 2rem;
-    border-top: 3px solid var(--neon-blue);
+    border-top: 3px solid var(--primary-blue);
 }
 
 .jovem-aprendiz-header {
@@ -648,8 +677,13 @@
 }
 
 @keyframes aprendizGlow {
-    0% { text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); }
-    100% { text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue), 0 0 45px var(--neon-blue); }
+    0% {
+        text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    }
+
+    100% {
+        text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue), 0 0 45px var(--neon-blue);
+    }
 }
 
 .jovem-aprendiz-badge {
@@ -664,8 +698,15 @@
 }
 
 @keyframes badgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .jovem-aprendiz-description {
@@ -707,42 +748,50 @@
 }
 
 @keyframes aprendizPulse {
-    0%, 100% { 
+
+    0%,
+    100% {
         transform: scale(1);
         box-shadow: 0 0 10px var(--neon-blue);
     }
-    50% { 
+
+    50% {
         transform: scale(1.05);
         box-shadow: 0 0 20px var(--neon-blue);
     }
 }
 
 .jovem-aprendiz-tag {
-    background: rgba(0, 212, 255, 0.2);
-    color: var(--neon-blue);
-    border-color: var(--neon-blue);
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .jovem-aprendiz-xp {
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue);
+    color: var(--primary-blue);
+    text-shadow: 0 0 10px var(--primary-blue);
     animation: xpBlueGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes xpBlueGlow {
-    0% { text-shadow: 0 0 10px var(--neon-blue); }
-    100% { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue); }
+    0% {
+        text-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    100% {
+        text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    }
 }
 
 .jovem-aprendiz-apply {
     background: transparent;
-    border: 2px solid var(--neon-blue);
-    color: var(--neon-blue);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
 }
 
 .jovem-aprendiz-apply:hover {
-    background: var(--neon-blue);
+    background: var(--primary-blue);
     color: var(--bg-darker);
     box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
 }
@@ -808,32 +857,32 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    
+
     .filters-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .list-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .vagas-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .vip-cards {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    
+
     .vaga-card,
     .info-card {
         padding: 1rem;
     }
-    
+
     .btn-pixel,
     .btn-apply {
         font-size: 0.7rem;

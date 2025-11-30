@@ -68,52 +68,6 @@
         
         <div class="vagas-grid">
             
-                    <div class="vaga-card">
-                        <div class="card-header">
-                            <div class="company-logo">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="card-status active">
-                                <i class="fas fa-circle"></i>
-                                ATIVA
-                            </div>
-                        </div>
-                        <h3 class="vaga-title"><?= htmlspecialchars($vaga->nome ?? 'Vaga sem nome') ?></h3>
-                        <p class="company-name"><?= htmlspecialchars($vaga->funcao ?? 'Empresa não informada') ?></p>
-                        <div class="vaga-details">
-                            <span class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <?= htmlspecialchars($vaga->cidade ?? 'Localização não informada') ?>
-                            </span>
-                            <span class="detail-item">
-                                <i class="fas fa-dollar-sign"></i>
-                                R$ <?= number_format($vaga->salario ?? 0, 0, ',', '.') ?>
-                            </span>
-                            <span class="detail-item">
-                                <i class="fas fa-clock"></i>
-                                CLT
-                            </span>
-                        </div>
-                        <p class="vaga-description">
-                            <?= htmlspecialchars(substr($vaga->descricao ?? 'Descrição não disponível', 0, 100)) ?>...
-                        </p>
-                        <div class="vaga-tags">
-                            <?php if ($vaga->vaga_pcd ?? false): ?>
-                                <span class="tag special">PCD</span>
-                            <?php endif; ?>
-                            <?php if ($vaga->vaga_estagio ?? false): ?>
-                                <span class="tag special">Estágio</span>
-                            <?php endif; ?>
-                            <?php if ($vaga->vaga_aprendiz ?? false): ?>
-                                <span class="tag special">Aprendiz</span>
-                            <?php endif; ?>
-                        </div>
-                        <button class="btn-apply open-login-modal">
-                            <i class="fas fa-paper-plane"></i>
-                            CANDIDATAR-SE
-                        </button>
-                    </div>
-            
             <!-- Vagas de exemplo para completar 12 cards -->
             <div class="vaga-card">
                 <div class="job-header">
