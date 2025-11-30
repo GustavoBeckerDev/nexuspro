@@ -338,7 +338,7 @@
                 <!-- Trilhas Completadas -->
                 <div class="profile-section">
                     <h4 class="section-title">
-                        <i class="fas fa-map-marked-alt"></i> Trilhas Completadas
+                        <i class="fas fa-map-marked-alt"></i> Trilhas Completas
                     </h4>
                     <div class="trails-progress">
                         <div class="trail-item completed">

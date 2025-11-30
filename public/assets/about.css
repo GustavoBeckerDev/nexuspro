@@ -1,17 +1,24 @@
 /* === VARIÁVEIS CSS === */
 :root {
-    --bg-dark: #0a0f1c;
-    --bg-darker: #050a14;
-    --neon-green: #00ff88;
-    --neon-green-dark: #00cc6a;
-    --neon-blue: #00d4ff;
-    --neon-purple: #a855f7;
-    --neon-pink: #ec4899;
-    --gold: #ffd700;
-    --orange: #ff8c00;
-    --white: #ffffff;
-    --gray: #b0b0b0;
-    --gray-dark: #333333;
+    --bg-dark: #0F172A;
+    /* Slate-900 */
+    --bg-darker: #020617;
+    /* Slate-950 */
+    --primary-purple: #8B5CF6;
+    /* Roxo */
+    --primary-purple-dark: #7C3AED;
+    --primary-pink: #EC4899;
+    /* Rosa */
+    --primary-blue: #3B82F6;
+    /* Azul */
+    --accent-pink: #F472B6;
+    --accent-gold: #F59E0B;
+    /* Dourado */
+    --accent-gold-dark: #D97706;
+    --orange: #F97316;
+    --white: #F8FAFC;
+    --gray: #CBD5E1;
+    --gray-dark: #64748B;
 }
 
 /* === RESET E BASE === */
@@ -40,8 +47,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 92, 246, 0.03) 2px, rgba(139, 92, 246, 0.03) 4px);
     pointer-events: none;
     z-index: 1;
 }
@@ -58,30 +65,31 @@ body {
 .main-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 4rem;
-    color: var(--neon-green);
-    text-shadow: 
-        0 0 10px var(--neon-green),
-        0 0 20px var(--neon-green),
-        0 0 40px var(--neon-green),
-        0 0 80px var(--neon-green);
+    color: var(--primary-purple);
+    text-shadow:
+        0 0 10px var(--primary-purple),
+        0 0 20px var(--primary-purple),
+        0 0 40px var(--primary-purple),
+        0 0 80px var(--primary-purple);
     margin: 0;
     animation: titleGlow 3s ease-in-out infinite alternate;
     letter-spacing: 0.2em;
 }
 
 @keyframes titleGlow {
-    0% { 
-        text-shadow: 
-            0 0 10px var(--neon-green),
-            0 0 20px var(--neon-green),
-            0 0 40px var(--neon-green);
+    0% {
+        text-shadow:
+            0 0 10px var(--primary-purple),
+            0 0 20px var(--primary-purple),
+            0 0 40px var(--primary-purple);
     }
-    100% { 
-        text-shadow: 
-            0 0 15px var(--neon-green),
-            0 0 30px var(--neon-green),
-            0 0 60px var(--neon-green),
-            0 0 120px var(--neon-green);
+
+    100% {
+        text-shadow:
+            0 0 15px var(--primary-purple),
+            0 0 30px var(--primary-purple),
+            0 0 60px var(--primary-purple),
+            0 0 120px var(--primary-purple);
     }
 }
 
@@ -98,18 +106,25 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20% 30%, var(--neon-green), transparent),
-        radial-gradient(2px 2px at 60% 70%, var(--neon-blue), transparent),
-        radial-gradient(1px 1px at 80% 20%, var(--gold), transparent);
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, var(--primary-purple), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--primary-blue), transparent),
+        radial-gradient(1px 1px at 80% 20%, var(--accent-gold), transparent);
     background-size: 200% 200%;
     opacity: 0.3;
     animation: particleFloat 20s ease-in-out infinite;
 }
 
 @keyframes particleFloat {
-    0%, 100% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
+
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
 }
 
 .hero-content {
@@ -126,21 +141,52 @@ body {
 .glitch-text {
     font-family: 'Press Start 2P', monospace;
     font-size: 3rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     margin-bottom: 1rem;
 }
 
 @keyframes glitch {
-    0%, 100% { transform: translate(0); }
-    10% { transform: translate(-2px, 2px); }
-    20% { transform: translate(2px, -2px); }
-    30% { transform: translate(-2px, -2px); }
-    40% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, 2px); }
-    60% { transform: translate(2px, -2px); }
-    70% { transform: translate(-2px, -2px); }
-    80% { transform: translate(2px, 2px); }
-    90% { transform: translate(-2px, 2px); }
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    10% {
+        transform: translate(-2px, 2px);
+    }
+
+    20% {
+        transform: translate(2px, -2px);
+    }
+
+    30% {
+        transform: translate(-2px, -2px);
+    }
+
+    40% {
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        transform: translate(-2px, 2px);
+    }
+
+    60% {
+        transform: translate(2px, -2px);
+    }
+
+    70% {
+        transform: translate(-2px, -2px);
+    }
+
+    80% {
+        transform: translate(2px, 2px);
+    }
+
+    90% {
+        transform: translate(-2px, 2px);
+    }
 }
 
 .subtitle-pixel {
@@ -151,8 +197,8 @@ body {
 }
 
 .highlight {
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue);
+    color: var(--primary-blue);
+    text-shadow: 0 0 10px var(--primary-blue);
 }
 
 .hero-stats {
@@ -163,25 +209,25 @@ body {
 }
 
 .stat-item {
-    background: rgba(0, 255, 136, 0.1);
-    border: 2px solid var(--neon-green);
+    background: rgba(139, 92, 246, 0.1);
+    border: 2px solid var(--primary-purple);
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
     transition: all 0.3s ease;
 }
 
 .stat-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 30px rgba(0, 255, 136, 0.5);
+    box-shadow: 0 5px 30px rgba(139, 92, 246, 0.5);
 }
 
 .stat-icon-img {
     width: 40px;
     height: 40px;
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 10px var(--neon-green));
+    filter: drop-shadow(0 0 10px var(--primary-purple));
 }
 
 .stat-value {
@@ -193,11 +239,11 @@ body {
 
 .pixel-frame {
     position: relative;
-    border: 4px solid var(--neon-green);
+    border: 4px solid var(--primary-purple);
     border-radius: 12px;
     padding: 1rem;
-    background: rgba(0, 255, 136, 0.1);
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    background: rgba(139, 92, 246, 0.1);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
 }
 
 .pixel-frame img {
@@ -212,7 +258,7 @@ body {
     left: -8px;
     right: -8px;
     bottom: -8px;
-    border: 2px solid var(--neon-blue);
+    border: 2px solid var(--primary-blue);
     border-radius: 16px;
     opacity: 0.5;
 }
@@ -232,26 +278,36 @@ body {
 .pixel-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 2rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     margin-bottom: 1rem;
 }
 
 @keyframes titlePulse {
-    0% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); }
-    100% { text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green), 0 0 45px var(--neon-green); }
+    0% {
+        text-shadow: 0 0 10px var(--primary-purple), 0 0 20px var(--primary-purple);
+    }
+
+    100% {
+        text-shadow: 0 0 15px var(--primary-purple), 0 0 30px var(--primary-purple), 0 0 45px var(--primary-purple);
+    }
 }
 
 .title-icon-img {
     width: 35px;
     height: 35px;
     margin: 0 1rem;
-    filter: drop-shadow(0 0 10px var(--neon-green));
+    filter: drop-shadow(0 0 10px var(--primary-purple));
     animation: iconSpin 4s linear infinite;
 }
 
 @keyframes iconSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .section-subtitle {
@@ -266,10 +322,10 @@ body {
 .trilhas-section {
     padding: 6rem 2rem;
     background: var(--bg-darker);
-    border: 3px solid var(--neon-blue);
+    border: 3px solid var(--primary-blue);
     border-radius: 15px;
     margin: 2rem;
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
 }
 
 .trilhas-map {
@@ -283,27 +339,27 @@ body {
 
 .trilha-card {
     background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
-    border: 4px solid var(--neon-green);
+    border: 4px solid var(--primary-purple);
     border-radius: 12px;
     padding: 2rem;
     position: relative;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
 
 .trilha-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
 }
 
 .trilha-featured {
-    border-color: var(--gold);
+    border-color: var(--accent-gold);
     background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
-    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
 }
 
 .trilha-featured:hover {
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
 }
 
 .trilha-connection {
@@ -328,29 +384,29 @@ body {
 .trilha-badge {
     width: 60px;
     height: 60px;
-    filter: drop-shadow(0 0 10px var(--neon-green));
+    filter: drop-shadow(0 0 10px var(--primary-purple));
 }
 
 .trilha-level {
-    background: rgba(0, 255, 136, 0.2);
-    border: 2px solid var(--neon-green);
+    background: rgba(139, 92, 246, 0.2);
+    border: 2px solid var(--primary-purple);
     padding: 0.5rem 1rem;
     border-radius: 20px;
 }
 
 .trilha-level.legendary {
-    border-color: var(--gold);
-    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--accent-gold);
+    background: rgba(245, 158, 11, 0.2);
 }
 
 .level-text {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.6rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
 }
 
 .trilha-level.legendary .level-text {
-    color: var(--gold);
+    color: var(--accent-gold);
 }
 
 .trilha-title {
@@ -377,43 +433,43 @@ body {
 }
 
 .reward-item {
-    background: rgba(0, 255, 136, 0.1);
-    border: 2px solid var(--neon-green);
+    background: rgba(139, 92, 246, 0.1);
+    border: 2px solid var(--primary-purple);
     padding: 0.5rem 1rem;
     font-family: 'Press Start 2P', monospace;
     font-size: 0.6rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     border-radius: 4px;
 }
 
 .reward-item.legendary {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(245, 158, 11, 0.1);
 }
 
 .progress-bar {
     width: 100%;
     height: 30px;
     background: var(--bg-darker);
-    border: 2px solid var(--neon-green);
+    border: 2px solid var(--primary-purple);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
 }
 
 .progress-bar.legendary {
-    border-color: var(--gold);
+    border-color: var(--accent-gold);
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    background: linear-gradient(90deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
     transition: width 0.5s ease;
 }
 
 .progress-bar.legendary .progress-fill {
-    background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 100%);
+    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--orange) 100%);
 }
 
 .progress-text {
@@ -432,10 +488,10 @@ body {
 .badges-section {
     padding: 6rem 2rem;
     background: var(--bg-dark);
-    border: 3px solid var(--neon-purple);
+    border: 3px solid var(--accent-pink);
     border-radius: 15px;
     margin: 2rem;
-    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 10px 40px rgba(244, 114, 182, 0.3);
 }
 
 .badges-grid {
@@ -448,38 +504,38 @@ body {
 
 .badge-card {
     background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
-    border: 4px solid var(--neon-blue);
+    border: 4px solid var(--primary-blue);
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
 }
 
 .badge-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
 }
 
 .badge-card.legendary {
-    border-color: var(--gold);
+    border-color: var(--accent-gold);
     background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
-    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
 }
 
 .badge-card.legendary:hover {
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
 }
 
 .badge-image {
     width: 80px;
     height: 80px;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px var(--neon-blue));
+    filter: drop-shadow(0 0 10px var(--primary-blue));
 }
 
 .badge-card.legendary .badge-image {
-    filter: drop-shadow(0 0 10px var(--gold));
+    filter: drop-shadow(0 0 10px var(--accent-gold));
 }
 
 .badge-title {
@@ -498,20 +554,20 @@ body {
 }
 
 .badge-reward {
-    background: rgba(0, 212, 255, 0.2);
-    border: 2px solid var(--neon-blue);
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid var(--primary-blue);
     padding: 0.5rem 1rem;
     font-family: 'Press Start 2P', monospace;
     font-size: 0.7rem;
-    color: var(--neon-blue);
+    color: var(--primary-blue);
     border-radius: 20px;
     display: inline-block;
 }
 
 .badge-reward.legendary {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(245, 158, 11, 0.2);
 }
 
 /* === PROFILE EXAMPLE SECTION === */
@@ -527,14 +583,14 @@ body {
 
 .profile-card {
     background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
-    border: 4px solid var(--neon-pink);
+    border: 4px solid var(--primary-pink);
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    grid-template-areas: 
+    grid-template-areas:
         "header header"
         "skills badges"
         "trails achievements";
@@ -547,7 +603,7 @@ body {
     gap: 2rem;
     margin-bottom: 0;
     padding-bottom: 2rem;
-    border-bottom: 2px solid var(--neon-pink);
+    border-bottom: 2px solid var(--primary-pink);
     grid-area: header;
 }
 
@@ -559,8 +615,8 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 4px solid var(--neon-green);
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    border: 4px solid var(--primary-purple);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
     object-fit: cover;
     object-position: center;
 }
@@ -569,7 +625,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--orange) 100%);
     color: var(--bg-darker);
     border-radius: 50%;
     width: 55px;
@@ -580,15 +636,22 @@ body {
     justify-content: center;
     font-family: 'Press Start 2P', monospace;
     border: 4px solid var(--bg-darker);
-    box-shadow: 
-        0 0 20px rgba(255, 215, 0, 0.8),
+    box-shadow:
+        0 0 20px rgba(245, 158, 11, 0.8),
         0 4px 10px rgba(0, 0, 0, 0.5);
     animation: levelPulse 2s ease-in-out infinite;
 }
 
 @keyframes levelPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .level-number {
@@ -617,7 +680,7 @@ body {
 .character-img {
     width: 150px;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.5));
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
 }
 
 .profile-badges-container {
@@ -675,7 +738,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.5));
 }
 
 .badge-locked-img {
@@ -690,13 +753,13 @@ body {
     font-size: 2rem;
     color: var(--white);
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px var(--neon-pink);
+    text-shadow: 0 0 10px var(--primary-pink);
 }
 
 .profile-title {
     font-family: 'VT323', monospace;
     font-size: 1.3rem;
-    color: var(--neon-blue);
+    color: var(--primary-blue);
     margin-bottom: 1.5rem;
 }
 
@@ -707,7 +770,7 @@ body {
 
 .stat-box {
     background: rgba(236, 72, 153, 0.1);
-    border: 2px solid var(--neon-pink);
+    border: 2px solid var(--primary-pink);
     border-radius: 8px;
     padding: 0.8rem 1rem;
     text-align: center;
@@ -721,7 +784,7 @@ body {
     display: block;
     font-family: 'Press Start 2P', monospace;
     font-size: 1.2rem;
-    color: var(--neon-pink);
+    color: var(--primary-pink);
     margin-bottom: 0.3rem;
 }
 
@@ -737,7 +800,7 @@ body {
 }
 
 .gold-box .stat-number {
-    color: var(--gold);
+    color: var(--accent-gold);
 }
 
 .gold-icon {
@@ -745,7 +808,7 @@ body {
     height: 30px;
     object-fit: contain;
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
 }
 
 /* Profile Sections */
@@ -777,7 +840,7 @@ body {
 .section-title {
     font-family: 'Orbitron', monospace;
     font-size: 1.3rem;
-    color: var(--neon-green);
+    color: var(--primary-purple);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -785,7 +848,7 @@ body {
 }
 
 .section-title i {
-    color: var(--neon-blue);
+    color: var(--primary-blue);
 }
 
 /* Skills */
@@ -811,14 +874,14 @@ body {
     flex: 1;
     height: 20px;
     background: var(--bg-darker);
-    border: 2px solid var(--neon-green);
+    border: 2px solid var(--primary-purple);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    background: linear-gradient(90deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
     transition: width 0.5s ease;
 }
 
@@ -841,13 +904,13 @@ body {
 }
 
 .badge-item.earned {
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
 }
 
 .badge-item.earned.legendary {
-    border-color: var(--gold);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
 }
 
 .badge-item.locked {
@@ -858,11 +921,11 @@ body {
     width: 50px;
     height: 50px;
     flex-shrink: 0;
-    filter: drop-shadow(0 0 5px var(--neon-blue));
+    filter: drop-shadow(0 0 5px var(--primary-blue));
 }
 
 .badge-item.earned.legendary .badge-icon {
-    filter: drop-shadow(0 0 10px var(--gold));
+    filter: drop-shadow(0 0 10px var(--accent-gold));
 }
 
 .badge-item.locked i {
@@ -896,11 +959,11 @@ body {
 }
 
 .trail-item.completed {
-    border-color: var(--neon-green);
+    border-color: var(--primary-purple);
 }
 
 .trail-item.in-progress {
-    border-color: var(--neon-blue);
+    border-color: var(--primary-blue);
 }
 
 .trail-icon {
@@ -910,7 +973,7 @@ body {
 .trail-image {
     width: 50px;
     height: 50px;
-    filter: drop-shadow(0 0 10px var(--neon-green));
+    filter: drop-shadow(0 0 10px var(--primary-purple));
 }
 
 .trail-info {
@@ -940,11 +1003,11 @@ body {
 }
 
 .trail-fill.completed {
-    background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+    background: linear-gradient(90deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
 }
 
 .trail-fill.in-progress {
-    background: linear-gradient(90deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-pink) 100%);
 }
 
 .trail-status {
@@ -953,11 +1016,11 @@ body {
 }
 
 .trail-status.completed {
-    color: var(--neon-green);
+    color: var(--primary-purple);
 }
 
 .trail-status.in-progress {
-    color: var(--neon-blue);
+    color: var(--primary-blue);
 }
 
 /* Achievements Timeline */
@@ -972,14 +1035,14 @@ body {
     gap: 1rem;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--neon-purple);
+    border: 2px solid var(--accent-pink);
     border-radius: 8px;
 }
 
 .achievement-date {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.7rem;
-    color: var(--neon-purple);
+    color: var(--accent-pink);
     min-width: 60px;
     text-align: center;
 }
@@ -994,7 +1057,7 @@ body {
 .achievement-icon {
     width: 40px;
     height: 40px;
-    filter: drop-shadow(0 0 10px var(--neon-purple));
+    filter: drop-shadow(0 0 10px var(--accent-pink));
 }
 
 .achievement-text strong {
@@ -1017,7 +1080,7 @@ body {
 }
 
 .vip-title {
-    color: var(--gold);
+    color: var(--accent-gold);
     font-size: 2.1rem;
 }
 
@@ -1051,7 +1114,7 @@ body {
 }
 
 .vip-plan {
-    border-color: var(--gold);
+    border-color: var(--accent-gold);
     background: linear-gradient(145deg, #2a1810 0%, #1a0f08 100%);
     z-index: 5;
 }
@@ -1068,14 +1131,14 @@ body {
     position: absolute;
     top: -10px;
     right: 20px;
-    background: var(--gold);
+    background: var(--accent-gold);
     color: var(--bg-dark);
     padding: 0.3rem 0.8rem;
     font-family: 'Press Start 2P', monospace;
     font-size: 0.6rem;
     border-radius: 4px;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.5);
 }
 
 .plan-features {
@@ -1095,7 +1158,7 @@ body {
 }
 
 .feature-item.vip {
-    color: var(--gold);
+    color: var(--accent-gold);
 }
 
 .vip-benefits {
@@ -1107,7 +1170,7 @@ body {
 .benefits-title {
     font-family: 'Orbitron', monospace;
     font-size: 1.3rem;
-    color: var(--gold);
+    color: var(--accent-gold);
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -1121,31 +1184,31 @@ body {
 }
 
 .benefit-item {
-    background: rgba(255, 215, 0, 0.1);
-    border: 3px solid var(--gold);
+    background: rgba(245, 158, 11, 0.1);
+    border: 3px solid var(--accent-gold);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.2);
 }
 
 .benefit-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
 }
 
 .benefit-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 0.8rem;
-    filter: drop-shadow(0 0 8px var(--gold));
+    filter: drop-shadow(0 0 8px var(--accent-gold));
 }
 
 .benefit-item h4 {
     font-family: 'Orbitron', monospace;
     font-size: 0.9rem;
-    color: var(--gold);
+    color: var(--accent-gold);
     margin-bottom: 0.4rem;
 }
 
@@ -1160,7 +1223,7 @@ body {
 @media (max-width: 1024px) {
     .profile-card {
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "header"
             "skills"
             "badges"
@@ -1175,41 +1238,41 @@ body {
         font-size: 2.5rem;
         letter-spacing: 0.1em;
     }
-    
+
     .main-title-section {
         padding: 1.5rem 1rem 1rem;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .glitch-text {
         font-size: 2rem;
     }
-    
+
     .trilhas-map {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .trilha-connection {
         display: none;
     }
-    
+
     .vip-comparison {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-stats {
         justify-content: center;
     }
-    
+
     /* Profile responsiveness */
     .profile-card {
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "header"
             "skills"
             "badges"
@@ -1217,39 +1280,39 @@ body {
             "achievements";
         gap: 2rem;
     }
-    
+
     .profile-header {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .character-img {
         width: 120px;
     }
-    
+
     .profile-stats {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .badges-showcase {
         grid-template-columns: 1fr;
     }
-    
+
     .badge-item {
         justify-content: flex-start;
     }
-    
+
     .trail-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .achievement-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .achievement-content {
         justify-content: center;
     }
