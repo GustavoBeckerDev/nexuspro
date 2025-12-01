@@ -19,14 +19,14 @@
                         <span class="stat-value">Sistema XP</span>
                     </div>
                     <div class="stat-item">
-                        <img src="<?= $baseUrl ?>/public/imagens/personagem.png" alt="Trilhas" class="stat-icon-img">
+                        <img src="<?= $baseUrl ?>/public/imagens/gamer-sem-fundo.png" alt="Trilhas" class="stat-icon-img">
                         <span class="stat-value">Trilhas</span>
                     </div>
                 </div>
             </div>
             
             <div class="hero-image">
-                <img src="<?= $baseUrl ?>/public/imagens/gamer.png" alt="Gamer" class="hero-img">
+                <img src="<?= $baseUrl ?>/public/imagens/maga-gamer.png" alt="Gamer" class="hero-img">
             </div>
         </div>
     </section>
@@ -95,9 +95,9 @@
                         <span class="level-text">NÍVEL 5</span>
                     </div>
                 </div>
-                <h3 class="trilha-title">Trilha da Primeira Vaga</h3>
+                <h3 class="trilha-title">Trilha da Conquista - Entrevista PRO</h3>
                 <p class="trilha-description">
-                    Conquiste sua primeira oportunidade profissional através do VDVagas! 
+                    Conquiste sua primeira oportunidade profissional através do NexusPro! 
                     Complete a jornada e ganhe +1000 XP e o troféu lendário!
                 </p>
                 <div class="trilha-rewards">
@@ -120,7 +120,7 @@
                 </div>
                 <h3 class="trilha-title">Explorador de Vagas</h3>
                 <p class="trilha-description">
-                    Explore diferentes setores e descubra oportunidades únicas. Candidate-se a 5 vagas diferentes e ganhe +500 XP!
+                    Explore diferentes setores e descubra oportunidades únicas, encontre o que combina com você e ganhe +500 XP!
                 </p>
                 <div class="trilha-rewards">
                     <span class="reward-item">+500 XP</span>
@@ -161,14 +161,14 @@
             <div class="badge-card legendary">
                 <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Badge Vaga" class="badge-image">
                 <h3 class="badge-title">Primeira Vaga</h3>
-                <p class="badge-description">Conquiste sua primeira oportunidade</p>
+                <p class="badge-description">Em busca de sua primeira oportunidade</p>
                 <div class="badge-reward legendary">+1000 XP</div>
             </div>
 
             <div class="badge-card">
                 <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Evolution" class="badge-image">
                 <h3 class="badge-title">Explorador</h3>
-                <p class="badge-description">Candidate-se a 5 vagas diferentes</p>
+                <p class="badge-description">Explorou 5 vagas diferentes</p>
                 <div class="badge-reward">+500 XP</div>
             </div>
         </div>
@@ -188,7 +188,7 @@
                 <!-- Header do Perfil -->
                 <div class="profile-header">
                     <div class="profile-avatar">
-                        <img src="<?= $baseUrl ?>/public/imagens/img_gu.jpg" alt="Avatar Gustavo" class="avatar-img">
+                        <img src="<?= $baseUrl ?>/public/imagens/rosto.png" alt="Avatar Gustavo" class="avatar-img">
                         <div class="level-badge">
                             <span class="level-number">15</span>
                             <span class="level-text">LVL</span>
@@ -265,7 +265,7 @@
                     </div>
                     
                     <div class="profile-character">
-                        <img src="<?= $baseUrl ?>/public/imagens/personagem.png" alt="Personagem" class="character-img">
+                        <img src="<?= $baseUrl ?>/public/imagens/gamer-sem-fundo.png" alt="Personagem" class="character-img">
                     </div>
                 </div>
 
@@ -394,7 +394,7 @@
                                 <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Achievement" class="achievement-icon">
                                 <div class="achievement-text">
                                     <strong>Badge "Explorador" conquistado!</strong>
-                                    <p>Candidatou-se a 5 vagas diferentes (+500 XP)</p>
+                                    <p>Se aventurou e explorou 5 vagas diferentes (+500 XP)</p>
                                 </div>
                             </div>
                         </div>
@@ -403,8 +403,8 @@
                             <div class="achievement-content">
                                 <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Achievement" class="achievement-icon">
                                 <div class="achievement-text">
-                                    <strong>Primeira Vaga Conquistada!</strong>
-                                    <p>Contratado como Full Stack Developer (+1000 XP)</p>
+                                    <strong>Primeira compra no Nexus Shop!</strong>
+                                    <p>Gastou suas primeiras moedas no Nexus Shop (+1000 XP)</p>
                                 </div>
                             </div>
                         </div>

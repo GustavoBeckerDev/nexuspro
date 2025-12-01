@@ -425,7 +425,7 @@
         <div class="about-feature">
             <div class="feature-image">
                 <div class="pixel-frame-large">
-                    <img src="<?= $baseUrl ?>/public/imagens/gamer-vdvagas.png" alt="Gamer VDVagas">
+                    <img src="<?= $baseUrl ?>/public/imagens/arqueiro-feliz.png" alt="Gamer VDVagas">
                 </div>
             </div>
             <div class="feature-text">

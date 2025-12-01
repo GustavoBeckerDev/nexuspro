@@ -2,7 +2,7 @@
 
 use App\Core\Auth;
 
-$logoPath = $baseUrl . "/public/imagens/nexuspro-castle.png";
+$logoPath = $baseUrl . "/public/imagens/logo-simplificada.png";
 
 ?>
 
